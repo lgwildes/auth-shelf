@@ -14,8 +14,8 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   if(req.isAuthenticated()){
-    console.log('/pet POST route');
-    console.log(req.body);
+    console.log('/item POST route');
+    console.log(req.body.description);
     console.log('is authenticated?', req.isAuthenticated());
     console.log('user', req.user);
     const sqlText = `INSERT INTO "item" ("description", "image_url", "user_id")
@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
             res.sendStatus(201);
         })
         .catch(dbErr => {
-            console.error('error in adding pet', dbErr);
+            console.error('error in adding item', dbErr);
             res.sendStatus(500);
         });
     }

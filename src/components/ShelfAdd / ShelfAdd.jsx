@@ -4,11 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 
 function ShelfAdd() {
     const dispatch = useDispatch();
-    const desc = useSelector(store=>store.desc);
+    const description = useSelector(store=>store.description);
     const url = useSelector(store=>store.url);
 
     const submitForm = (e) => {
         e.preventDefault();
+        console.log('desc is ', description);
+        dispatch({
+            type: 'ADD_ITEM',
+            payload: {
+                description: description,
+                url: url
+            }
+        })
         
     }
     return (
@@ -17,9 +25,9 @@ function ShelfAdd() {
         <form onSubmit={submitForm}>
             <input
             type="text"
-            Placeholder="Description"
+            placeholder="Description"
             onChange={(e)=>{dispatch({type:'STORE_DESC', payload: e.target.value})}}
-            value={desc}
+            value={description}
             ></input>
             <input 
             type="text"
