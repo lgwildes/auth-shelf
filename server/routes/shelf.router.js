@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
  * Delete an item if it's something the logged in user added
  */
 router.delete('/:id', (req, res) => {
-  // endpoint functionality
+  console.log('❌ ID to delete is', req.params.id);
 });
 
 /**
