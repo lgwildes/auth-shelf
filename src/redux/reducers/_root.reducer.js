@@ -2,6 +2,8 @@ import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
 import shelfReducer from './shelf.reducer';
+import description from './description.reducer';
+import url from './url.reducer'
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -12,7 +14,10 @@ import shelfReducer from './shelf.reducer';
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
-  shelfReducer
+  shelfReducer,
+  description,
+  url
+
 });
 
 export default rootReducer;
