@@ -17,6 +17,9 @@ function ShelfAdd() {
                 url: url
             }
         })
+        dispatch({
+            type: 'CLEAR_STORE'
+        })
         
     }
     return (
