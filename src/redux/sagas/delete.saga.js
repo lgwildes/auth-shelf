@@ -7,6 +7,9 @@ function* deleteItem(action) {
     } catch (error) {
         console.log('error in delete SAGA', error);
     }
+    yield put({
+        type: 'FETCH_ITEMS'
+    });
 
 }
 
